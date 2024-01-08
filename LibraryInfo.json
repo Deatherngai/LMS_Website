@@ -1,0 +1,40 @@
+{
+    "Library": [{
+        "LID":"KLL",
+        "Contact": "25678768",
+        "Library": "Kownloon Library",
+        "Location": "No. 56 Portland Street, Mongkok, Hong Kong"
+      },
+      {
+        "LID":"MKL",
+        "Contact": "25679537",
+        "Library": "Sha Tin Library",
+        "Location": "1 Yuen Wo Road, Sha Tin, Hong Kong"
+      }],
+    "Fine":{
+        "Return_late": [{
+                "Subject": "children",
+                "Fines": 0.5
+            },
+            {
+                "Subject": "adult",
+                "Fines": 1
+            }]
+        },
+    "Service":{
+        "1":"Apply a library card",
+        "2":"Browing Books",
+        "3":"Borrowing a computer in Library",
+        "4":"Query Library Information",
+        "5":""
+    },
+    "Area":{
+        "1":"Adult Library",
+        "2":"Child Library",
+        "3":"Study Room",
+        "4":"Multimedia Information Services Room",
+        "5":"Computer and Information Centre"
+    }
+
+
+}
