@@ -30,8 +30,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             if($b<$n){
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$record[$b]['ISBN'];
             }else{
-                echo $_SESSION['loan_stock'];
-                $url = '#';
                 $url = 'Location:../User/Member/Loan_'.$action.'.php';
             }
         }else{
@@ -57,18 +55,13 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $_SESSION['st_books'] = '['.$books.','.$book.']';
             }
             $b = count(json_decode($_SESSION['st_books'],true));
-            echo $_SESSION['st_books'];
             $n = count($stock);
-            echo $b;
             if($b<$n){
-                echo 'countinue';
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$b]['ISBN'];
             }else{
-                echo 'end';
                 $url = 'Location:../User/Staff/StockInfo.php';
             }
         }else{
-            echo 'first';
             $_SESSION['st_books'] =  urldecode($_GET['books']);
             $stock = json_decode($_SESSION['LibStock'],true);
             $n = count($stock);
@@ -80,10 +73,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             }
         }
     }else if($action == "BQ"){
-        echo $action;
-        $_SESSION['book'] = urldecode($_GET['book']);
-        echo urldecode($_GET['book']);
-        //$url = '';
+        $_SESSION['book'] = urldecode($_GET['book']);;
         $url = 'Location:../DBQuery/StockQuery.php?action='.$action;
     }else if($action == "search"){
         $_SESSION['QList'] = urldecode($_GET['books']);
@@ -103,8 +93,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $_SESSION['r'].=$stock[$n]['ISBN'].',';
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$n]['ISBN'];
             }else{
-                echo $_SESSION['loan_books'];
-                echo $_SESSION['r'];
                 $url = 'Location:../User/Staff/LoanRecords.php';
             }
         }else{
@@ -114,8 +102,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $_SESSION['r'].=$stock[$n]['ISBN'].',';
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$n]['ISBN'];
             }else{
-                echo $_SESSION['loan_books'].'<br/>';
-                echo $_SESSION['r'].',';
                 $url = 'Location:../User/Staff/LoanRecords.php';
             }
         }
