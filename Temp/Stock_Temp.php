@@ -40,8 +40,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 if($size>0){
                     $isbn = $ISBN[0]['ISBN'];
                     $_SESSION['r']=$ISBN[0]['ISBN'];
-                    echo $size;
-                    $url = '#';
                     $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$isbn;
                 }else{
                     $url = '#';
@@ -191,17 +189,14 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         $stock = json_decode($_SESSION['LibStock'],true);
         $isbn = $stock[0]['ISBN'];
         $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$isbn;
-        echo count($stock);
     }else if($action == 'AllStock'){
         $allStock = json_decode($_GET['stock'],true);
         DividedArea($allStock);
-        //echo count($allStock);
         $item = json_decode($_SESSION['library_all'],true);
         $lib_name = $item[0]['LID'].'_stock';
         $item_name = json_decode($_SESSION[$lib_name],true);
         $_SESSION['item']=0;
         $_SESSION['item_n']=0;
-        //$url = '#';
         $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$item_name[0]['ISBN'];
     }
     header($url);
@@ -215,7 +210,6 @@ function QueryStock(){
     $len = count($loan_rd);
     $str = array();
     $loan = array();
-    echo count($stock);
     for($x=0;$x<$len;$x++){
         if($lib == $stock[$x]['LID']){
             array_push($str,'{"ISBN":'.$stock[$x]['ISBN'].'}');
@@ -243,10 +237,8 @@ function DividedArea($allStock){
         }
     }
     for($h=0;$h<$len;$h++){
-        //echo $h.'<br />';
         $target = $lib_n[$h]['LID'].'_stock';
         $_SESSION[$target] = '['.implode(',',$lib_arr[$h]).']'; 
-        //echo $_SESSION[$target].'<br />';
     }
 }
 

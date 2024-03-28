@@ -19,7 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     }else{
         $url = '';
     }
-    echo $_SESSION['records'];
     header($url);
 }
 ?>

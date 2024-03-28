@@ -27,7 +27,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             break;
         case "AM":
             $accounts = json_decode($_GET['accounts'],true);
-            echo '<br />'.count($accounts);
             DivideType($accounts);
             $url = 'Location:../User/Admin/account_list.php';
             break;
@@ -47,12 +46,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         default:
         ;
     }
-    //echo $_SESSION['member_list'];
-    //echo $_SESSION['staff_list'];
-    //echo $_SESSION['admin_list'];
-    //echo $_SESSION['member_un_list'];
-    //echo  $_SESSION['staff_un_list'];
-    //echo $_SESSION['admin_un_list'];
     header($url);
 }
 
@@ -113,12 +106,6 @@ function DivideType($accounts){
     $_SESSION['member_un_list'] = '['.implode(',',$member_un).']';
     $_SESSION['staff_un_list'] = '['.implode(',',$staff_un).']';
     $_SESSION['admin_un_list'] = '['.implode(',',$admin_un).']';
-    echo "Member:".$_SESSION['member_list']."<br />";
-    echo "Staff:".$_SESSION['staff_list']."<br />";
-    echo "Admin:".$_SESSION['admin_list']."<br />";
-    echo "Member_un:".$_SESSION['member_un_list']."<br />";
-    echo "Staff_un:".$_SESSION['staff_un_list']."<br />";
-    echo "Admin_un:".$_SESSION['admin_un_list']."<br />";
 }
 ?>
 <link href="../static/css/animation.css" rel="stylesheet">

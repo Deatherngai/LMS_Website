@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             }
         }
     }else if($action == "BQ"){
-        $_SESSION['book'] = urldecode($_GET['book']);;
+        $_SESSION['book'] = urldecode($_GET['book']);
         $url = 'Location:../DBQuery/StockQuery.php?action='.$action;
     }else if($action == "search"){
         $_SESSION['QList'] = urldecode($_GET['books']);
@@ -134,15 +134,11 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                     $_SESSION['item_n'] = $item_n;
                     $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$item_n]['ISBN'];
                 }else{
-                    echo $groud."<br />";
-                    echo $_SESSION[$groud];
                     $url = 'Location:../User/Admin/LoanRecords.php';
                 }
             }
         }else{
             $_SESSION[$groud] = $book;
-            echo $item_n;
-            echo $book;
             $item_n += 1;
             if($item_n<count($stock)){
                 $_SESSION['item_n'] = $item_n;
@@ -156,8 +152,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                     $_SESSION['item_n'] = $item_n;
                     $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$item_n]['ISBN'];
                 }else{
-                    echo $groud."<br />";
-                    echo $_SESSION[$groud];
                     $url = 'Location:../User/Admin/LoanRecords.php';
                 }
             }
@@ -182,7 +176,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             if($item_n<count($stock)){
                 $_SESSION['item_n'] = $item_n;
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$item_n]['ISBN'];
-                echo  $item_n;
             }else{
                 $item += 1;
                 if($item<count($libs)){
@@ -201,7 +194,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             if($item_n<count($stock)){
                 $_SESSION['item_n'] = $item_n;
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$stock[$item_n]['ISBN'];
-                echo  $item_n;
             }else{
                 $item += 1;
                 if($item<count($libs)){
