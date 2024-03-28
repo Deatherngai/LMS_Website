@@ -81,16 +81,13 @@ function GetBookStoack() {
 }
 
 function BookQuery() {
-    console.log(isbn);
     var Book_Ref = db.collection("LMS").doc("Tables").collection("Book").where("ISBN", "==", isbn);
     Book_Ref.onSnapshot((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log(doc.data);
             data.push(doc.data());
         });
         str = JSON.stringify(data);
         var url = "../Temp/Book_Temp.php?action=" + action + "&book=" + encodeURIComponent(str);
-        console.log(str);
         window.location.replace(url);
     });
 }
@@ -106,13 +103,11 @@ function GetReserveN() {
 
 function BookSearch() {
     n = 0;
-    console.log(condit);
     var Book_Ref = db.collection("LMS").doc("Tables").collection("Book");
     Book_Ref.onSnapshot((querySnapshot) => {
         querySnapshot.forEach(doc => {
             if (doc.data()['BookName_EN'].includes(condit)) {
                 data.push(doc.data());
-                //console.log(doc.data());
             }
         });
         if (data.length > 0) {
@@ -125,7 +120,6 @@ function BookSearch() {
 }
 
 function BQByISBN(isbn) {
-    console.log(isbn);
     var query = db.collection("LMS").doc("Tables").collection("Book").where("ISBN", "==", isbn);
     query.onSnapshot((querySnapshot) => {
         querySnapshot.forEach(doc => {
@@ -142,7 +136,6 @@ function BQByISBN(isbn) {
         } else {
             str = JSON.stringify(data);
         }
-        console.log(str);
         WindowsReplace();
     });
 }
@@ -152,7 +145,6 @@ function BookMQuery() {
     var query;
     var isbn = "";
     if (action.includes("ISBN")) {
-        console.log("ISBN Query");
         for (let k = 0; k < condit.length; k++) {
             if (condit[k] == "ISBN") {
                 isbn = condit[k + 1];
@@ -165,15 +157,11 @@ function BookMQuery() {
             case 3:
                 if (!action.includes("kw")) {
                     query = db.collection("LMS").doc("Tables").collection("Book").where(condit[1], "==", condit[2]);
-                    console.log(condit[1]);
-                    console.log(condit[2]);
                 } else {
                     query = db.collection("LMS").doc("Tables").collection("Book");
-                    console.log(condit[1]);
                 }
                 break;
             case 5:
-                console.log("2Q");
                 if (!action.includes("kw")) {
                     query = db.collection("LMS").doc("Tables").collection("Book").where(condit[1], "==", condit[2])
                         .where(
@@ -183,7 +171,6 @@ function BookMQuery() {
                 }
                 break;
             case 7:
-                console.log("3Q");
                 if (!action.includes("kw")) {
                     query = db.collection("LMS").doc("Tables").collection("Book").where(condit[1], "==", condit[2])
                         .where(
@@ -195,19 +182,16 @@ function BookMQuery() {
                 }
                 break;
             case 9:
-                console.log("4Q");
                 if (!action.includes("kw")) {
                     query = db.collection("LMS").doc("Tables").collection("Book").where(condit[1], "==", condit[2])
                         .where(condit[3], "==", condit[4]).where(condit[5], "==", condit[6]).where(condit[7], "==",
                             condit[8]);
                 } else {
-                    console.log("Incules KW");
                     query = db.collection("LMS").doc("Tables").collection("Book").where(condit[3], "==", condit[4])
                         .where(condit[5], "==", condit[6]).where(condit[7], "==", condit[8]);
                 }
                 break;
             default:
-                console.log("AQ");
                 query = db.collection("LMS").doc("Tables").collection("Book").where(
                     condit[3], "==", condit[4]).where(condit[5], "==", condit[6]).where(condit[7], "==", condit[9]);
         }
@@ -215,7 +199,6 @@ function BookMQuery() {
             querySnapshot.forEach(doc => {
                 data.push(doc.data());
             });
-            console.log(data);
             const result = [];
             if (action.includes("kw")) {
                 for (let i = 0; i < data.length; i++) {
@@ -227,8 +210,6 @@ function BookMQuery() {
             } else {
                 str = JSON.stringify(data);
             }
-            console.log(condit);
-            console.log(str);
             action = "MQ";
             WindowsReplace(str);
         });
@@ -237,7 +218,6 @@ function BookMQuery() {
 
 function WindowsReplace() {
     var url;
-    console.log(str);
     url = "../Temp/Book_Temp.php?action=" + action + "&books=" + encodeURIComponent(str);
     window.location.replace(url);
 };

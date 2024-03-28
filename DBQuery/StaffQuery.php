@@ -8,7 +8,6 @@ if(isset($_SESSION['Account'])){
 if($_SERVER['REQUEST_METHOD'] == "GET"){
     $action = $_GET['action'];
 }
-echo $AccID;
 ?>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>

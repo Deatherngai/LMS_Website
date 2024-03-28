@@ -6,7 +6,6 @@ $AccID= "";
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     $action = $_GET['action'];
 }
-echo $_SESSION['Account'];
 $account = json_decode($_SESSION['Account'],true);
 $AccID = $account[0]['AccID'];
 ?>
@@ -35,22 +34,17 @@ var db = firebase.firestore();
 var Loan_ref = db.collection("LMS").doc("Tables").collection("LoadRecord");
 
 if (action == "record") {
-    console.log('record');
     LoanRecord();
 } else if (action == "history") {
-    console.log('history');
     LoanHistory();
 }else if(action == 'loan' || action == 'loan_all'){
-    console.log('loan');
     QueryAllLoan();
 }
 
 function LoanRecord() {
-	console.log(id);
     var query = Loan_ref.where("AccID", "==", id).where("Status", "==", "Unreturn");
     query.onSnapshot((querySnapshot) => {
         querySnapshot.forEach(doc => {
-            console.log(doc.data());
             records.push(doc.data());
         });
         str = JSON.stringify(records);
@@ -59,7 +53,6 @@ function LoanRecord() {
 }
 
 function LoanHistory() {
-	console.log(id);
     var query = Loan_ref.where("AccID", "==", id).where("Status", "==", "Returned");
     query.onSnapshot((querySnapshot) => {
         querySnapshot.forEach(doc => {
@@ -81,7 +74,6 @@ function QueryAllLoan() {
 }
 
 function Show() {
-    console.log(str);
     var url = "../Temp/Loan_Temp.php?action=" + action + "&records=" + str;
     window.location.replace(url);
 }

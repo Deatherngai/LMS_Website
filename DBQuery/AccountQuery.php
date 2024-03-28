@@ -21,9 +21,7 @@ if($action == "SignIn" || $action == "reserve"){
     $acc = $_SESSION['AccId'];
 }else if($action == "AM"){
     $acc = $_SESSION['AccId'];
-    echo $_SESSION['AccId'];
 }
-echo $action;
 ?>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
@@ -48,9 +46,7 @@ var login = false;
 var str = "";
 var action = "<?=$action;?>";
 var Account_Ref = db.collection("LMS").doc("Tables").collection("Account");
-console.log(action);
 if (action == "SignIn" || action == "reserve") {
-    console.log("Sign_In");
     SignIn();
 } else if (action == "Up_pw") {
     UpDatePw();
@@ -68,7 +64,6 @@ function SignIn() {
                 });
                 if (data.length > 0) {
                     sessionStorage.setItem("login", true);
-                    console.log(sessionStorage.getItem("login"));
                     localStorage.setItem("Account", JSON.stringify(data));
                     WindowReplace();
                 } else {
@@ -86,7 +81,6 @@ function SignIn() {
 
 function UpDatePw() {
     var acc = "<?=$acc;?>";
-    console.log(acc);
     var n_pw = "<?=$n_pw;?>";
     var statement = Account_Ref.where("AccID", "==", acc);
     statement.onSnapshot((querySnapshot) => {
@@ -124,11 +118,9 @@ function AccInfo() {
 }
 
 function QueryAll() {
-    console.log('Query ALL');
     n = 0;
     Account_Ref.onSnapshot((query) => {
         query.forEach((doc) => {
-            console.log(doc.data());
             data.push(doc.data());
             n++;
         });
