@@ -1,12 +1,4 @@
 <?php
-/*
- * @Author: Deatherngai tom2000998@yahoo.com.hk
- * @Date: 2024-01-21 11:11:59
- * @LastEditors: Deatherngai tom2000998@yahoo.com.hk
- * @LastEditTime: 2024-01-21 12:03:26
- * @FilePath: \LMS_Web(Firestore)\public\ReserveResult.php
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 session_start();
 $book = '';
 $library = '';

@@ -52,5 +52,5 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
     </div>
 </div>
 <?php
-include('includes/footer.php')
+include('includes/footer.php');
 ?>

@@ -130,5 +130,5 @@ function DoubleInsert() {
 }
 </script>
 <?php
-    include('../includes/footer.php')
+    include('../includes/footer.php');
 ?>
