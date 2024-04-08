@@ -1,12 +1,4 @@
 <?php
-/*
- * @Author: Deatherngai tom2000998@yahoo.com.hk
- * @Date: 2023-12-19 12:34:13
- * @LastEditors: Deatherngai tom2000998@yahoo.com.hk
- * @LastEditTime: 2024-01-21 13:56:48
- * @FilePath: \LMS_Web(Firestore)\User\Staff\LoanRecords.php
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 $books = '';
 $rn = 0;
 include('../includes/header.php');
