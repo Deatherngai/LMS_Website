@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-
 .tr{
-border:1px solid black;
+    border:1px solid black;
 }
 #search{
     float:left;
@@ -29,36 +27,4 @@ a:link{
 #Acc_Info{
     margin:auto;
     margin-top:20px;
-=======
-
-.tr{
-border:1px solid black;
-}
-#search{
-    float:left;
-    width:80%;
-}
-.search_btn{
-    float:left;
-    width:auto;
-    margin-left:20px;
-}
-#btn_s{
-    background-color:#75E6DA;
-    color:black;
-    border-radius: 10px;
-}
-a:link{
-    text-decoration: none;
-}
-#frame{
-    margin:auto;
-    border:outset;
-    width:800px;
-    height:300px;
-}
-#Acc_Info{
-    margin:auto;
-    margin-top:20px;
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 }
