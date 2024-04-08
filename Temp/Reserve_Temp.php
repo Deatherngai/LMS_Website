@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<link href="../static/css/animation.css" rel="stylesheet" />
-<body translate="no" >
-  <div class="loader"></div>
-=======
-
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 <?php
 $url = '';
 session_start();
@@ -20,10 +13,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         $_SESSION['r_records'] = $_GET['records'];
         $records = json_decode($_SESSION['r_records'],true);
         if(count($records)>0){
-<<<<<<< HEAD
-=======
-            echo "working";
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
             $_SESSION['rn']=1;
             unset($_SESSION['r_books']);
             $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$records[0]['ISBN'];
@@ -34,10 +23,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         $_SESSION['r_records'] = $_GET['records'];
         $records = json_decode($_SESSION['r_records'],true);
         if(count($records)>0){
-<<<<<<< HEAD
-=======
-            echo "working";
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
             $_SESSION['rn']=1;
             unset($_SESSION['r_books']);
             DividArea($records);
@@ -81,7 +66,3 @@ function DividArea($arr){
 }
 header($url);
 ?>
-<<<<<<< HEAD
-</body>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb

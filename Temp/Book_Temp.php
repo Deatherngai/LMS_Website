@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<link href="../static/css/animation.css" rel="stylesheet" />
-<body translate="no" >
-  <div class="loader"></div>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 <?php
 $action = '';
 $book = '';
@@ -214,10 +208,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             }
         }
     }else if($action == 'r_record'){
-<<<<<<< HEAD
-=======
-        echo "working";
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
         $rn = (int)$_SESSION['rn'];
         $records = json_decode($_SESSION['r_records'],true);
         if(isset($_SESSION['r_books'])){
@@ -227,26 +217,14 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             $books = str_replace(']','',$books);
             $_SESSION['r_books'] = '['.$books.','.$book.']';
             if(($rn)<count($records)){
-<<<<<<< HEAD
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$records[$rn]['ISBN'];
                 $_SESSION['rn'] = $rn+1;
             }else{
-=======
-                echo $_SESSION['r_books'];
-                $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$records[$rn]['ISBN'];
-                $_SESSION['rn'] = $rn+1;
-            }else{
-                echo "end";
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
                 $url = 'Location:../public/ReserveRecords.php';
             }
         }else{
             $_SESSION['r_books'] = urldecode($_GET['book']);
             if(($rn)<count($records)){
-<<<<<<< HEAD
-=======
-                echo $_SESSION['r_books'];
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$records[$rn]['ISBN'];
                 $_SESSION['rn'] = $rn+1;
             }else{
@@ -276,13 +254,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 for($i=0;$i<count($lib);$i++){
                     $cur = $lib[$i]['LID'].'_resever';
                     $isbn = "";
-<<<<<<< HEAD
                     if(isset($_SESSION[$cur])){
-=======
-                    echo $i.'<br />';
-                    if(isset($_SESSION[$cur])){
-                        echo 'set<br />';
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
                         $list = json_decode($_SESSION[$cur],true);
                         $n = count($list);
                         if($n!=0){
@@ -306,13 +278,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 for($i=0;$i<count($lib);$i++){
                     $cur = $lib[$i]['LID'].'_resever';
                     $isbn = "";
-<<<<<<< HEAD
                     if(isset($_SESSION[$cur])){
-=======
-                    echo $i.'<br />';
-                    if(isset($_SESSION[$cur])){
-                        echo 'set<br />';
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
                         $list = json_decode($_SESSION[$cur],true);
                         $n = count($list);
                         if($n!=0){
@@ -332,7 +298,3 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
     header($url);
 }
 ?>
-<<<<<<< HEAD
-</body>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb

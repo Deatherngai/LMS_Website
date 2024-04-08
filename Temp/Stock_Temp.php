@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-<link href="../static/css/animation.css" rel="stylesheet" />
-<body translate="no" >
-  <div class="loader"></div>
-=======
-
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 <?php
 $action = "";
 $lid="";
@@ -272,7 +265,3 @@ function loan_stock(){
     }
 }
 ?>
-<<<<<<< HEAD
-</body>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb

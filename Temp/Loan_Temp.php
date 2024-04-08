@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 <?php
 session_start();
 $action = '';
@@ -26,10 +22,3 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     header($url);
 }
 ?>
-<<<<<<< HEAD
-<link href="../static/css/animation.css" rel="stylesheet" />
-<body translate="no" >
-  <div class="loader"></div>
-</body>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb

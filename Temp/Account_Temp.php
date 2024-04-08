@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<link href="../static/css/animation.css" rel="stylesheet" />
-<body translate="no" >
-  <div class="loader"></div>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 <?php
 $action = "";
 $url="";
@@ -113,7 +107,3 @@ function DivideType($accounts){
     $_SESSION['admin_un_list'] = '['.implode(',',$admin_un).']';
 }
 ?>
-<<<<<<< HEAD
-</body>
-=======
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
