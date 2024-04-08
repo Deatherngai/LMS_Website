@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $action ='';
@@ -13,11 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
 <script src="../static/jslib/jquery-1.11.1.js"></script>
-<<<<<<< HEAD
 <link href="../static/css/animation.css" rel="stylesheet" />
-=======
-<link href="../static/css/animation.css" rel="stylesheet">
->>>>>>> ff63cd86e8e6c58959edc116977b4be8c5a790eb
 <body translate="no" >
   <div class="loader"></div>
 <script>
