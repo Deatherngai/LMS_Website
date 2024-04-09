@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             $url = 'Location:../DBQuery/LibraryQuery.php?action='.$action;
             break;
         default:
-            $url='';
+            $url = "Location: ../public/AccInfo.php";
             break;
     }
     header($url);

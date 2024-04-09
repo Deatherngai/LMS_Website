@@ -3,6 +3,11 @@ include('includes/header.php');
 $info = "";
 $n = "";
 $acc = json_decode($_SESSION['Account'] ,true);
+if($acc[0]['AccType'] == "staff"){
+    $info = json_decode($_SESSION['Staff_info'] ,true);
+}else{
+    $info = json_decode($_SESSION['Member_info'] ,true);
+}
 ?>
 <style>
 table,
@@ -32,9 +37,9 @@ td {
                     $content='';
                     $content.='<table id="Acc_Info">';
                     $content.='<tr><td>Account ID</td><td>'.$acc[0]['AccID'].'</td></tr>';
-                    $content.='<tr><td>Name</td><td></td></tr>';
-                    $content.='<tr><td>Conact Number</td><td></td></tr>';
-                    $content.='<tr><td>Contact Address</td><td></td></tr>';
+                    $content.='<tr><td>Name</td><td>'.$info[0]['First_Name'].' '.$info[0]['Last_Name'].'</td></tr>';
+                    $content.='<tr><td>Conact Number</td><td>'.$info[0]['Contact'].'</td></tr>';
+                    $content.='<tr><td>Contact Address</td><td>'.$info[0]['Address'].'</td></tr>';
                     $content.='<tr><td>Account Status</td><td>'.$acc[0]['Status'].'</td></tr>';
                     $content.='</table>';
                     $content.='<br />';
@@ -44,6 +49,8 @@ td {
             </div>
         </div>
     </div>
-    <?php
-include('../includes/footer.php')
+<script>
+</script>
+<?php
+    include('../includes/footer.php')
 ?>
