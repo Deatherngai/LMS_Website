@@ -55,12 +55,13 @@ $(document).ready(function() {
             <div class="card-body">
                 <?php
                     $reports = json_decode($_SESSION['report'],true);
+                    $content = "";
                     for($i=0;$i<count($reports);$i++){
-                        $content = '<table><tr><td rowspan="8"><img src="'.$reports[$i]['img'].'"/></td></tr>';
+                        $content .= '<table><tr><td rowspan="8"><img src="'.$reports[$i]['img'].'"/></td></tr>';
                         $content .= '<tr><td>BookName</td><td>:</td><td>'.$reports[$i]['BookName_EN'].'</td></tr>';
                         $content .= '<tr><td>Author</td><td>:</td><td>'.$reports[$i]['Author'].'</td></tr>';
                         $content .= '<tr><td>Publisher</td><td>:</td><td>'.$reports[$i]['Publication'].'</td></tr>';
-                        $content .= '<tr><td>Publish Year</td><td>:</td><td>'.$reports[$i]['Public Year'].'</td></tr>';
+                        $content .= '<tr><td>Publish Year</td><td>:</td><td>'.$reports[$i]['Publication_Year'].'</td></tr>';
                         $content .= '<tr><td>Subject</td><td>:</td><td>'.$reports[$i]['Subject'].'</td></tr>';
                         $content .= '<tr><td>Language</td><td>:</td><td>'.$reports[$i]['Language'].'</td></tr>';
                         $content .= '<tr><td>ISBN</td><td>:</td><td>'.$reports[$i]['ISBN'].'</td></tr>';

@@ -6,6 +6,32 @@
     .nav-item{
         margin-left:20px;
     }
+    .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 </style>    
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -18,7 +44,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="./index.php"><img class="icon" src="static\icons\home.png" /></a>
+                    <a class="nav-link active" href="./index.php"><img class="icon" src="static\icons\home.png" />
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="./public/AS.php"><img class="icon" src="static\icons\Book_Search.png" /></a>

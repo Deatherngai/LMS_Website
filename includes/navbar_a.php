@@ -29,7 +29,7 @@
                     <a class="nav-link active" href="./DBQuery/LibraryQuery.php?action=loan_all"><img class="icon" src="static\icons\borrow.png" /></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./DBQuery//StaffQuery.php?action=r_records"><img class="icon" src="static\icons\reserved_records.png" /></a>
+                    <a class="nav-link active" href="./DBQuery/StaffQuery.php?action=r_records"><img class="icon" src="static\icons\reserved_records.png" /></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="./DBQuery/AccountQuery.php?action=AM"><img class="icon" src="static\icons\Acc_List.png" /></a>

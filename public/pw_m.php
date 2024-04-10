@@ -41,17 +41,17 @@ $pw = $acc[0]['Password'];
                             <tr>
                                 <td>Original Password</td>
                                 <td>:</td>
-                                <td><input type=" password" id="init_pw" name="init_pw"></td>
+                                <td><input type="password" id="init_pw" name="init_pw"></td>
                             </tr>
                             <tr>
                                 <td>New Password</td>
                                 <td>:</td>
-                                <td><input type=" password" id="new_pw" name="new_pw" onchange="DoubleInsert()"></td>
+                                <td><input type="password" id="new_pw" name="new_pw" onchange="DoubleInsert()"></td>
                             </tr>
                             <tr>
                                 <td>Confirm Passord</td>
                                 <td>:</td>
-                                <td><input type=" password" id="con_pw" name="con_pw" onchange="DoubleInsert()">
+                                <td><input type="password" id="con_pw" name="con_pw" onchange="DoubleInsert()">
                                 </td>
                             </tr>
                             <tr>

@@ -104,9 +104,7 @@ tr:nth-child(even) {
 </div>
 <script>
     var str = "item"+"0";
-    let t_arr = JSON.parse(document.getElementById(str).innerText);
-    //console.log(JSON.parse(document.getElementById(str).innerText));
-    //consolet                                                                                                                                                                                                    
+    let t_arr = JSON.parse(document.getElementById(str).innerText);                                                                                                                                                                                                  
     function Criteria(){
         var subject = document.getElementById("subject").value;
         var library = document.getElementById("library").value;
@@ -114,17 +112,13 @@ tr:nth-child(even) {
         if(!(library === "null")){
             arr = Search_Library(library);
             if(subject === "null"){
-                console.log("Q")
                 ShowTable(arr);
             }else{
-                console.log("2Q")
                 Search_Subject2(arr,subject);
             }
         }else if(!(subject === "null")){
-            console.log("S_Q")
             Search_Subject(subject);
         }else{
-            console.log("A_Q")
             showAll();
         }
     }
@@ -159,7 +153,6 @@ tr:nth-child(even) {
             r_arr = [];
             for(let b=0;b<len;b++){
                 var item_sub = book_arr[b].Subject;
-                //console.log(book_arr[b].Subject);
                 if(item_sub.includes(subject)){
                     var str = '{"BID":"'+stock_arr[b].BID+'","BookName_CN":"'+book_arr[b].BookName_CN+'","BookName_EN":"'+book_arr[b].BookName_EN+'","Author":"'+book_arr[b].Author+'","ISBN":"'+book_arr[b].ISBN+'","LID":"'+stock_arr[b].LID+'","Status":"'+stock_arr[b].Status+'","Subject":"'+book_arr[b].Subject+'"}';
                     r_arr.push(JSON.parse(str));
@@ -167,7 +160,6 @@ tr:nth-child(even) {
             }
             c_arr.push(r_arr);
         }
-        console.log(c_arr);
         Show2DTable(c_arr);
     }
     function Search_Subject2(arr,subject){
@@ -202,7 +194,6 @@ tr:nth-child(even) {
         Show2DTable(c_arr);
     }
     function ShowTable(arr){
-        //console.log(arr);
         var table = "";
         var lib = "";
         if(arr.length > 0){
@@ -224,12 +215,12 @@ tr:nth-child(even) {
                 }
             }
             table += "</table>";
-            console.log(table);
-            document.getElementById("adult").innerHTML = table;
+        }else{
+            table = "<h5>No related Stock records!</h5>";
         }
+        document.getElementById("adult").innerHTML = table;
     }
     function Show2DTable(arr){
-        console.log("2D Table");
         var table = "";
         var content = "";
         if(arr.length > 0){

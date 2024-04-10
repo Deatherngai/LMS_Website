@@ -29,13 +29,25 @@
                     <a class="nav-link active" href="../../DBQuery/StaffQuery.php?action=loan"><img class="icon" src="..\..\static\icons\borrow.png" /></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="../../DBQuery/StaffQuery.php?action=r_records"><img class="icon" src="..\..\static\icons\reserved_records.png" /></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="../../DBQuery/LibraryQuery.php?action=info"><img class="icon" src="..\..\static\icons\Contact_us.png" /></a>
+                </li>
+                <li class="nav-item">
+                <div class="dropdown">
+                        <a class="nav-link active" href="#"><img class="icon" src="..\..\static\icons\report.png" /></a>
+                        <div class="dropdown-content">
+                            <a href="../../DBQuery/ReportQuery.php?action=report">Book Report List</a>
+                            <a href="#">Write Book Report</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link active" href="#"><img class="icon" src="..\..\static\icons\account.png" /></a>
                         <div class="dropdown-content">
-                            <a href="../../DBQuery/AccountQuery.php?action=info">Personal Details</a>
+                            <a href="../../DBQuery/StaffQuery.php?action=info">Personal Details</a>
                             <a href="../../public/pw_m.php">Modify Password</a>
                             <a href="../../public/sign_out.php">Sign out</a>
                         </div>

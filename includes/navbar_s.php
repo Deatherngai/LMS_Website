@@ -47,7 +47,7 @@
                     <div class="dropdown">
                         <a class="nav-link active" href="#"><img class="icon" src="static\icons\account.png" /></a>
                         <div class="dropdown-content">
-                            <a href="./DBQuery/AccountQuery.php?action=info">Personal Details</a>
+                            <a href="./DBQuery/StaffQuery.php?action=info">Personal Details</a>
                             <a href="./public/pw_m.php">Modify Password</a>
                             <a href="./public/sign_out.php">Sign out</a>
                         </div>

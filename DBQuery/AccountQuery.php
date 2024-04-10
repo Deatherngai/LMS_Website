@@ -5,6 +5,7 @@ $pw = "";
 $id = "";
 $n_pw= "";
 $action2 = "";
+unset($_SESSION['login2']);
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $action = $_POST['action'];
 }else{

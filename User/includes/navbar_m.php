@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="../../index2.php"><img class="icon" src="..\..\static\icons\home.png" /></a>
+                    <a class="nav-link active" href="../../index2.php"><img class="icon" src="..\..\static\icons\home.png" /></a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../../public/AS.php"><img class="icon" src="..\..\static\icons\Book_Search.png" /></a>
+                    <a class="nav-link active" href="../public/AS.php"><img class="icon" src="..\..\static\icons\Book_Search.png" /></a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
@@ -32,15 +32,27 @@
                     </div>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="../../DBQuery/LibraryQuery.php?action=r_record"><img class="icon" src="..\..\static\icons\reserved_records.png" /></a>
+                </li>
+                <li class="nav-item">
+                <div class="dropdown">
+                        <a class="nav-link active" href="#"><img class="icon" src="..\..\static\icons\report.png" /></a>
+                        <div class="dropdown-content">
+                            <a href="../../DBQuery/ReportQuery.php?action=report">Book Report List</a>
+                            <a href="#">Write Book Report</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="../../DBQuery/LibraryQuery.php?action=info"><img class="icon" src="..\..\static\icons\Contact_us.png" /></a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link active" href="#"><img class="icon" src="..\..\static\icons\account.png" /></a>
                         <div class="dropdown-content">
-                            <a href="../../public/AccInfo.php">Personal Details</a>
-                            <a href="../../public/pw_m.php">Modify Password</a>
-                            <a href="../../public/sign_out.php">Sign out</a>
+                            <a href="../../DBQuery/MemberQuery.php?action=info">Personal Details</a>
+                            <a href="../public/pw_m.php">Modify Password</a>
+                            <a href="../public/sign_out.php">Sign out</a>
                         </div>
                     </div>
                 </li>

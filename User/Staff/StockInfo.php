@@ -89,7 +89,6 @@ function Criteria(){
 	table = "<table><tr><td colspan='7'>Sub1</td><tr>";
 	table += "<tr><td>Book ID</td><td>Book Name</td><td>Author</td><td>ISBN</td><td>Library ID</td><td>Status</td><td></td></tr>";
 	for(let x=0;x<stock.length;x++){
-		console.log(stockList[x].Subject);
 		var item = stockList[x].Subject;
 		if(item.includes(subject)){
 			exist +=1; 

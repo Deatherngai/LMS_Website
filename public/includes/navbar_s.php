@@ -20,7 +20,7 @@
                     <a class="nav-link active" href="../index2.php"><img class="icon" src="..\static\icons\home.png" /></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../public/AS.php"><img class="icon" src="..\static\icons\Book_Search.png" /></a>
+                    <a class="nav-link active" href="./AS.php"><img class="icon" src="..\static\icons\Book_Search.png" /></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="../DBQuery/StaffQuery.php?action=stock"><img class="icon" src="..\static\icons\Stock.png" /></a>
@@ -29,13 +29,25 @@
                     <a class="nav-link active" href="../DBQuery/StaffQuery.php?action=loan"><img class="icon" src="..\static\icons\borrow.png" /></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="../DBQuery/StaffQuery.php?action=r_records"><img class="icon" src="..\static\icons\reserved_records.png" /></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="../DBQuery/LibraryQuery.php?action=info"><img class="icon" src="..\static\icons\Contact_us.png" /></a>
+                </li>
+                <li class="nav-item">
+                <div class="dropdown">
+                        <a class="nav-link active" href="#"><img class="icon" src="..\static\icons\report.png" /></a>
+                        <div class="dropdown-content">
+                            <a href="../DBQuery/ReportQuery.php?action=report">Book Report List</a>
+                            <a href="#">Write Book Report</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link active" href="#"><img class="icon" src="..\static\icons\account.png" /></a>
                         <div class="dropdown-content">
-                            <a href="../DBQuery/AccountQuery.php?action=info">Personal Details</a>
+                            <a href="../DBQuery/StaffQuery.php?action=info">Personal Details</a>
                             <a href="./pw_m.php">Modify Password</a>
                             <a href="./sign_out.php">Sign out</a>
                         </div>

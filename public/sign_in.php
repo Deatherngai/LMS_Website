@@ -1,6 +1,10 @@
 <?php
 $action = '';
+$login = '';
 session_start();
+if(isset($_SESSION['login2'])){
+    $login = $_SESSION['login2'];
+}
 if($_SERVER['REQUEST_METHOD'] == "GET"){
     if(isset($_GET['action2'])){
         $action = $_GET['action2'];
@@ -68,6 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
             <form action="../DBQuery/AccountQuery.php" method="POST" name="sign_form">
                 <input type="hidden" class="form-control" id="action" name="action" value="SignIn">
                 <img class="mb-4" src="..\static\icons\login.png" alt="" width="100" height="100">
+                <div id="msg"><b style="color:red;">Sorry, your account ID or password is incorrect, Please try again</b></div>
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
                 <div class="form-floating">
@@ -76,9 +81,10 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
                     <label for="floatingInput">Account ID</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" name="password" id="floatingPassword"
+                    <input type="password" class="form-control" name="password" id="Password"
                         placeholder="Password" required>
-                    <label for="floatingPassword">Password</label>
+                    <label for="floatingPassword">Password</label><br />
+                    <input type="checkbox" onclick="showPW()">Show Password
                 </div>
                 <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
             </form>
@@ -86,10 +92,25 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
     </div>
     <script>
     var action = "<?=$action;?>";
+    var msg = "<?=$login;?>";
+    if(msg === 'false'){
+        document.getElementById("msg").style.display = "";
+    }else{
+        document.getElementById("msg").style.display = "none";
+        console.log("error");
+    }
     if (action != "") {
         document.getElementById("action").value = action;
     } else {
         document.getElementById("action").value = "SignIn";
+    }
+    function showPW() {
+        var x = document.getElementById("Password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
     }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

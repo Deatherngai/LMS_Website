@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $_SESSION['AccType'] = $acc[0]['AccType'];
                 $url = "Location:../index2.php";
             } else {
-                $_SESSION['login'] = 'false';
+                $_SESSION['login2'] = 'false';
                 $url = "Location:../public/sign_in.php";
             }
             break;
