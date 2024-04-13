@@ -40,7 +40,7 @@ console.log("<?=$len;?>");
                     <label>Filter Criteria:</label><br />
                     <label>Subject:</label>
                     <?php
-                        $str2 = '<select id="subject" onchange="Criteria()"><option value='.$stockList[0]['Subject'].'>'.$stockList[0]['Subject'].'</option>';
+                        $str2 = '<select id="subject" onchange="Criteria()"><option value="null" selected>Please select once subject</option><option value='.$stockList[0]['Subject'].'>'.$stockList[0]['Subject'].'</option>';
                         for($x=1;$x<$len;$x++){
                             if(!strpos($str2,$stockList[$x]['Subject'])){
                                 $str2 .= '<option value='.$stockList[$x]['Subject'].'>'.$stockList[$x]['Subject'].'</option>';

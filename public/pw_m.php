@@ -74,6 +74,7 @@ $pw = $acc[0]['Password'];
         </div>
     </div>
 </div>
+<script src="..\static\jslib\AES.js"></script>
 <script>
 var match = false;
 var confirm = false;
@@ -84,10 +85,11 @@ function CheckMatch() {
     msg = "";
     DoubleInsert();
     var or_pw = document.getElementById("init_pw").value;
+    
     var pw = "<?=$pw;?>";
     if (or_pw == pw) {
         if (confirm) {
-            if (or_pw == n_pw) {
+            if (or_pw == md5(n_pw)) {
                 msg +=
                     "<label style='color:red;'><b>The new password can not same as the orignal password!</b></label>";
                 document.getElementById("error_msg").innerHTML = msg;
@@ -112,12 +114,11 @@ function CheckMatch() {
             document.getElementById("error_msg").innerHTML = msg;
         }
     }
-    console.log(msg);
 }
 
 function DoubleInsert() {
     confirm = false;
-    n_pw = document.getElementById("new_pw").value;
+    n_pw = window.btoa(document.getElementById("new_pw").value);
     var c_pw = document.getElementById("con_pw").value;
     if (c_pw != "" || n_pw != "") {
         if (c_pw == n_pw) {
@@ -126,7 +127,6 @@ function DoubleInsert() {
             confirm = false;
         }
     }
-    console.log(confirm);
 }
 </script>
 <?php

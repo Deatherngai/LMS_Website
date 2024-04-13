@@ -26,6 +26,7 @@ if($action == "SignIn" || $action == "reserve"){
 ?>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
 <script src="../static/jslib/jquery-1.11.1.js"></script>
 <link href="../static/css/animation.css" rel="stylesheet" />
 <body translate="no" >
@@ -56,8 +57,7 @@ if (action == "SignIn" || action == "reserve") {
 }
 
 function SignIn() {
-    var query = Account_Ref.where("AccID", "==", "<?=$acc;?>").where("Password", "==",
-        "<?=$pw;?>");
+    var query = Account_Ref.where("AccID", "==", "<?=$acc;?>").where("Password", "==",window.btoa("<?=$pw;?>"));
     query.onSnapshot((querySnapshot) => {
             if (!querySnapshot.empty) {
                 querySnapshot.forEach((doc) => {

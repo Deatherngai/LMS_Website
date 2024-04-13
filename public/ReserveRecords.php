@@ -70,9 +70,14 @@ tr:nth-child(even) {
                                 $item = $library[$k]['LID'].'_books';
                                 $books =json_decode($_SESSION[$item],true);
                                 for($e=0;$e<$n;$e++){
-                                    $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td>Fixed Date</td></tr>';
-                                }
+                                    if($records[$e]['ApplyDate'] == $records[$e]['Fixed Date']){
+                                        $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td></td></tr>';
+                                    }else{
+                                        $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td>Fixed Date</td></tr>';
+                                    }
+                                    
                                 $content .= '</table><br />';
+                                }
                             }else{
                                 $content .= '<table>';
                                 $content .= '<tr><th colspan="6">'.$library[$k]['Library'].'</th></tr>';
