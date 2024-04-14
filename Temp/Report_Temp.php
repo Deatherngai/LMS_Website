@@ -8,7 +8,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
   if($action == 'report'){
       $_SESSION['report'] = $_GET['reports'];
       $url = 'Location:../public/BookReport.php';
-      echo %url;
   }
   header($url);
 }
