@@ -1,5 +1,5 @@
-
 <?php
+ob_clean();
 session_start();
 if($_SERVER['REQUEST_METHOD']=="GET"){
   $action = $_GET['action'];
