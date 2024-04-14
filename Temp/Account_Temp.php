@@ -1,4 +1,5 @@
 <?php
+ob_clean();
 $action = "";
 $url="";
 $accounts = '';
@@ -46,6 +47,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         ;
     }
     header($url);
+    exit;
 }
 
 function DivideType($accounts){

@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_clean();
 $k=1;
 $n = 1;
 $len = 0;
@@ -42,5 +43,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         $url = 'Location:../DBQuery/ReserveQuery.php?action='.$action;
     }
     header($url);
+    exit;
 }
 ?>

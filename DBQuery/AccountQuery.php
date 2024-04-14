@@ -82,7 +82,7 @@ function SignIn() {
 
 function UpDatePw() {
     var acc = "<?=$acc;?>";
-    var n_pw = "<?=$n_pw;?>";
+    var n_pw = window.btoa("<?=$n_pw;?>");
     var statement = Account_Ref.where("AccID", "==", acc);
     statement.onSnapshot((querySnapshot) => {
         querySnapshot.forEach((doc) => {

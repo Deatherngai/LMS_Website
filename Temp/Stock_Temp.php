@@ -1,4 +1,5 @@
 <?php
+ob_clean();
 $action = "";
 $lid="";
 $stock;
@@ -198,6 +199,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$item_name[0]['ISBN'];
     }
     header($url);
+    exit;
 }
 
 function QueryStock(){

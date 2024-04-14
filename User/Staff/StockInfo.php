@@ -90,7 +90,19 @@ function Criteria(){
 	table += "<tr><td>Book ID</td><td>Book Name</td><td>Author</td><td>ISBN</td><td>Library ID</td><td>Status</td><td></td></tr>";
 	for(let x=0;x<stock.length;x++){
 		var item = stockList[x].Subject;
-		if(item.includes(subject)){
+        if(subject == "null"){
+            table += '<tr><td>'+stock[x]['BID']+'</td>';
+            table += '<td>'+stockList[x]['BookName_EN']+'</td>';
+            table +='<td>'+stockList[x]['Author']+'</td>';
+            table +='<td>'+stockList[x]['ISBN']+'</td>';
+            table +='<td>'+stock[x]['LID']+'</td>';
+            table +='<td>'+stock[x]['Status']+'</td>';
+            if(stock[x]['Status'] == "Intact"){
+                table +='<td><Button onclick="EditStatus(\''+stock[x]['BID']+'\',\'Damaged\')">Damaged</Button><Button onclick="EditStatus(\''+stock[x]['BID']+'\',\'Violation\')">Violation</Button></td></tr>';
+            }else if(stock[x]['Status'] == "Damaged" || stock[x]['Status'] == "Violation"){
+                table +='<td><Button disabled>Damaged"</Button><Button disabled>Violation</Button></td></tr>';
+            }
+        }else if(item.includes(subject)){
 			exist +=1; 
 			table += '<tr><td>'+stock[x]['BID']+'</td>';
             table += '<td>'+stockList[x]['BookName_EN']+'</td>';
@@ -100,7 +112,7 @@ function Criteria(){
             table +='<td>'+stock[x]['Status']+'</td>';
             if(stock[x]['Status'] == "Intact"){
                 table +='<td><Button onclick="EditStatus(\''+stock[x]['BID']+'\',\'Damaged\')">Damaged</Button><Button onclick="EditStatus(\''+stock[x]['BID']+'\',\'Violation\')">Violation</Button></td></tr>';
-            }else if(stock[x]['Status'] == "Damaged" || stock[x]['Status'] == "violation"){
+            }else if(stock[x]['Status'] == "Damaged" || stock[x]['Status'] == "Violation"){
                 table +='<td><Button disabled>Damaged"</Button><Button disabled>Violation</Button></td></tr>';
             }
 		}

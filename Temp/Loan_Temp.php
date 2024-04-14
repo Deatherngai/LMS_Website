@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_clean();
 $action = '';
 $records='';
 $url = '';
@@ -20,5 +21,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         $url = '';
     }
     header($url);
+    exit;
 }
 ?>

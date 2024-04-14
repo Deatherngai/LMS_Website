@@ -1,4 +1,5 @@
 <?php
+ob_clean();
 $url = '';
 session_start();
 if($_SERVER['REQUEST_METHOD']=="GET"){
@@ -22,5 +23,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
             break;
     }
     header($url);
+    exit;
 }
 ?>

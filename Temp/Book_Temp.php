@@ -1,4 +1,5 @@
 <?php
+ob_clean();
 $action = '';
 $book = '';
 $url='';
@@ -296,5 +297,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
         }
     }
     header($url);
+    exit;
 }
 ?>

@@ -77,7 +77,7 @@ tr:nth-child(even) {
                                 $table .='<td>'.$stock[$x]['Status'].'</td>';
                                 if($stock[$x]['Status'] == "Intact"){
                                     $table .='<td><Button onclick="EditStatus(\''.$stock[$x]['BID'].'\',\'Damaged\')">Damaged</Button><Button onclick="EditStatus(\''.$stock[$x]['BID'].'\',\'Violation\')">Violation</Button></td></tr>';
-                                }else if($stock[$x]['Status'] == "Damaged" || $stock[$x]['Status'] == "violation"){
+                                }else if($stock[$x]['Status'] == "Damaged" || $stock[$x]['Status'] == "Violation"){
                                     $table .='<td><Button disabled>Damaged"</Button><Button disabled>Violation</Button></td></tr>';
                                 }
                         }

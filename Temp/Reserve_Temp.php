@@ -1,4 +1,5 @@
 <?php
+ob_clean();
 $url = '';
 session_start();
 if($_SERVER['REQUEST_METHOD']=="GET"){
@@ -65,4 +66,5 @@ function DividArea($arr){
     }
 }
 header($url);
+exit;
 ?>

@@ -40,7 +40,6 @@ tr:nth-child(even) {
                     //echo $_SESSION['KLL_books'];
                     if($account[0]['AccType'] == "member"){
                         if(isset($_SESSION['r_books'])){
-                            echo "work";
                             $r_books = json_decode($_SESSION['r_books'],true);
                             $records = json_decode($_SESSION['r_records'],true);
                             $library = json_decode($_SESSION['library_all'],true);
@@ -48,9 +47,14 @@ tr:nth-child(even) {
                             $content .= '<tr><td>Reserve ID</td><td>Book Name</td><td>Get Location</td><td>Apply Date</td><td>Status</td><td>Fixed Date</td></tr>';
                             for($i=0;$i<count($r_books);$i++){
                                 for($k=0;$k<count($library);$k++){
-                                    if($records[$i]['LID'] == $library[$k]['LID'])
-                                    $content .= '<tr><td>'.$records[$i]['RD'].'</td><td>'.$r_books[$i]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$i]['ApplyDate']['seconds']).'</td><td>'.$records[$i]['Status'].'</td><td>Fixed Date</td></tr>';
-                                    $k = count($library)+1;
+                                    if($records[$i]['LID'] == $library[$k]['LID']){
+                                        if(date("Y-m-d",$records[$i]['ApplyDate']['seconds']) == date("Y-m-d",$records[$i]['FixedDate']['seconds'])){
+                                            $content .= '<tr><td>'.$records[$i]['RD'].'</td><td>'.$r_books[$i]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$i]['ApplyDate']['seconds']).'</td><td>'.$records[$i]['Status'].'</td><td></td></tr>';
+                                        }else{
+                                            $content .= '<tr><td>'.$records[$i]['RD'].'</td><td>'.$r_books[$i]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$i]['ApplyDate']['seconds']).'</td><td>'.$records[$i]['Status'].'</td><td>'.date("Y-m-d",$records[$i]['FixedDate']['seconds']).'</td></tr>';
+                                        }
+                                        $k = count($library)+1;
+                                    }
                                 }
                             }
                             $content .= '</table>';
@@ -70,14 +74,13 @@ tr:nth-child(even) {
                                 $item = $library[$k]['LID'].'_books';
                                 $books =json_decode($_SESSION[$item],true);
                                 for($e=0;$e<$n;$e++){
-                                    if($records[$e]['ApplyDate'] == $records[$e]['Fixed Date']){
+                                    if(date("Y-m-d",$records[$e]['ApplyDate']['seconds']) == date("Y-m-d",$records[$e]['FixedDate']['seconds'])){
                                         $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td></td></tr>';
                                     }else{
-                                        $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td>Fixed Date</td></tr>';
+                                        $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td>'.date("Y-m-d",$records[$e]['FixedDate']['seconds']).'</td></tr>';
                                     }
-                                    
-                                $content .= '</table><br />';
                                 }
+                                $content .= '</table><br />';
                             }else{
                                 $content .= '<table>';
                                 $content .= '<tr><th colspan="6">'.$library[$k]['Library'].'</th></tr>';
