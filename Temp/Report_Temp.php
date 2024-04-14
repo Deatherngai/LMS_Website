@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
       $url = 'Location:../public/BookReport.php';
   }
   header($url);
+  echo "<script>console.log("+$url+")";
 }
 ?>
 </body>
