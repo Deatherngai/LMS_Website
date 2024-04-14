@@ -1,6 +1,4 @@
-<link href="../static/css/animation.css" rel="stylesheet" />
-<body translate="no" >
-  <div class="loader"></div>
+
 <?php
 session_start();
 if($_SERVER['REQUEST_METHOD']=="GET"){
@@ -12,4 +10,3 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
   header($url);
 }
 ?>
-</body>
