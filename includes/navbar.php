@@ -55,7 +55,7 @@
                         <a class="nav-link active" href="#"><img class="icon" src="static\icons\report.png" /></a>
                         <div class="dropdown-content">
                             <a href="./DBQuery/ReportQuery.php?action=report">Book Report List</a>
-                            <a href="#">Write Book Report</a>
+                            <a href="https://colab.research.google.com/drive/18Q94KrAXt6zc9-PRkhUYjBPaeo1yRu1k?usp=sharing" target="_blank">Write Book Report</a>
                         </div>
                     </div>
                 </li>
