@@ -8,5 +8,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
       $url = 'Location:../public/BookReport.php';
   }
   header($url);
+  exit;
 }
 ?>
