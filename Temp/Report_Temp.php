@@ -1,6 +1,7 @@
 <link href="../static/css/animation.css" rel="stylesheet" />
 <body translate="no" >
   <div class="loader"></div>
+</body>
 <?php
 ob_clean();
 session_start();
@@ -14,4 +15,3 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
   exit;
 }
 ?>
-</body>
