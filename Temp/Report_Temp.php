@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
   $action = $_GET['action'];
   if($action == 'report'){
       $_SESSION['report'] = $_GET['reports'];
-      $url = "Location:../public/BookReport.php";
+      $url = "Location:../public/AccInfo.php";
   }
   header($url);
   exit;
