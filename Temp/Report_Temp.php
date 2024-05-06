@@ -1,4 +1,3 @@
-<link href="../static/css/animation.css" rel="stylesheet" />
 <?php
 ob_clean();
 session_start();
