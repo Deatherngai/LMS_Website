@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
       $_SESSION['report'] = $_GET['reports'];
       $url = 'Location:../public/BookReport.php';
   }
-  echo '<script>console.log('.$url.')</script>';
+  echo '<script>console.log("'.$url.'")</script>';
   header($url);
   exit;
 }
