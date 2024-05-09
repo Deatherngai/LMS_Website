@@ -3,7 +3,7 @@ include('includes/header.php');
 ?>
 <script>
 $(document).ready(function() {
-    $(document).prop('title', 'Home');
+    $(document).prop('title', 'Library Management System');
     var login = "<?= $_SESSION['login']; ?>";
     const stock = eval($("#bookStock").text());
     var content = "";
