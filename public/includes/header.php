@@ -17,7 +17,7 @@ session_start();
     <link href="../static/css/layout.css" rel="stylesheet">
     <!--<link href="../static/css/bootstrap.min.css" rel="stylesheet" />-->
     <script src="../static/jslib/jquery-1.11.1.js"></script>
-    <title>PHP Firebase</title>
+    <title>Library Management System</title>
 </head>
 
 <body>
