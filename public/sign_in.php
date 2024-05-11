@@ -57,6 +57,15 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
                     <a class="nav-link active" href="../public/AS.php"><img class="icon" src="..\static\icons\Book_Search.png" /></a>
                 </li>
                 <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link active" href="#"><img class="icon" src="..\static\icons\report.png" /></a>
+                        <div class="dropdown-content">
+                            <a href="../DBQuery/ReportQuery.php?action=report">Book Report List</a>
+                            <a href="https://colab.research.google.com/drive/18Q94KrAXt6zc9-PRkhUYjBPaeo1yRu1k?usp=sharing" target="_blank">Write Book Report</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="../DBQuery/LibraryQuery.php?action=info"><img class="icon" src="..\static\icons\Contact_us.png" /></a>
                 </li>
                 <li class="nav-item">
