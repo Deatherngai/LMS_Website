@@ -252,22 +252,23 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$list[$item_n]['ISBN'];
                 $_SESSION['item_n'] = $item_n+1;
             }else{
-                for($i=0;$i<count($lib);$i++){
-                    $cur = $lib[$i]['LID'].'_resever';
+                $rn = $rn + 1;
+                if($rn<count($lib)){
+                    $cur = $lib[$rn]['LID'].'_resever';
                     $isbn = "";
                     if(isset($_SESSION[$cur])){
                         $list = json_decode($_SESSION[$cur],true);
                         $n = count($list);
                         if($n!=0){
                             $isbn = $list[0]['ISBN'];
-                            $_SESSION['rrn'] = $i;
+                            $_SESSION['rrn'] = $rn;
                             $_SESSION['item_n'] = 1;
                             $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$isbn;
-                        }else if($i === count($lib)-1){
-                            $url = 'Location:../public/ReserveRecords.php';
                         }
                     }
-
+                }else{
+                    $url = 'Location:../User/ReserveRecords.php';
+                    echo "end2";
                 }
             }
         }else{
@@ -276,22 +277,23 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                 $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$list[$item_n]['ISBN'];
                 $_SESSION['item_n'] = $item_n+1;
             }else{
-                for($i=0;$i<count($lib);$i++){
-                    $cur = $lib[$i]['LID'].'_resever';
+                $rn = $rn + 1;
+                if($rn<count($lib)){
+                    $cur = $lib[$rn]['LID'].'_resever';
                     $isbn = "";
                     if(isset($_SESSION[$cur])){
                         $list = json_decode($_SESSION[$cur],true);
                         $n = count($list);
                         if($n!=0){
                             $isbn = $list[0]['ISBN'];
-                            $_SESSION['rrn'] = $i;
+                            $_SESSION['rrn'] = $rn;
                             $_SESSION['item_n'] = 1;
                             $url = 'Location:../DBQuery/BookQuery.php?action='.$action.'&isbn='.$isbn;
-                        }else if($i === count($lib)-1){
-                           $url = 'Location:../public/ReserveRecords.php';
                         }
                     }
-
+                }else{
+                    $url = 'Location:../User/ReserveRecords.php';
+                    echo "end";
                 }
             }
         }
