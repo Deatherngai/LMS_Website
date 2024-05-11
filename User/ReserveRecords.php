@@ -92,7 +92,7 @@ tr:nth-child(even) {
                                     $table .='<td></td>';
                                     $table .='<td>'.$stock[$x]['Status'].'</td>';
                                 }else{
-                                    $table .='<td></td>';
+                                    $table .='<td>'.date("Y-m-d",$stock[$x]['FixedDate']['seconds']).'</td>';
                                     $table .='<td>'.$stock[$x]['Status'].'</td>';
                                 }
                         }
