@@ -88,7 +88,7 @@ tr:nth-child(even) {
                                 $table .='<td>'.$books[$x]['Author'].'</td>';
                                 $table .='<td>'.$stock[$x]['AccID'].'</td>';
                                 $table .='<td>'.date("Y-m-d",$stock[$x]['ApplyDate']['seconds']).'</td>';
-                                if($stock[$x]['Status'] == 'Wait'){
+                                if($stock[$x]['Status'] != 'Processed'){
                                     $table .='<td></td>';
                                     $table .='<td>'.$stock[$x]['Status'].'</td>';
                                 }else{
