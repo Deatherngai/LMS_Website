@@ -268,7 +268,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                     }
                 }else{
                     $url = 'Location:../User/ReserveRecords.php';
-                    echo "end2";
                 }
             }
         }else{
@@ -293,7 +292,6 @@ if($_SERVER['REQUEST_METHOD']=="GET"){
                     }
                 }else{
                     $url = 'Location:../User/ReserveRecords.php';
-                    echo "end";
                 }
             }
         }
