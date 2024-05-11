@@ -48,7 +48,7 @@ tr:nth-child(even) {
                             for($i=0;$i<count($r_books);$i++){
                                 for($k=0;$k<count($library);$k++){
                                     if($records[$i]['LID'] == $library[$k]['LID']){
-                                        if($records[$e]['Status'] != "Processed"){
+                                        if($records[$i]['Status'] != "Processed"){
                                             $content .= '<tr><td>'.$records[$i]['RD'].'</td><td>'.$r_books[$i]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$i]['ApplyDate']['seconds']).'</td><td>'.$records[$i]['Status'].'</td><td></td></tr>';
                                         }else{
                                             $content .= '<tr><td>'.$records[$i]['RD'].'</td><td>'.$r_books[$i]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$i]['ApplyDate']['seconds']).'</td><td>'.$records[$i]['Status'].'</td><td>'.date("Y-m-d",$records[$i]['FixedDate']['seconds']).'</td></tr>';
@@ -76,7 +76,8 @@ tr:nth-child(even) {
                                 for($e=0;$e<$n;$e++){
                                     if($records[$e]['Status'] != "Processed"){
                                         $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td></td></tr>';
-                                    }else{
+                                        echo "<script>console.log('wait')</script>";
+                                    }else{ 
                                         $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td>'.date("Y-m-d",$records[$e]['FixedDate']['seconds']).'</td></tr>';
                                     }
                                 }
