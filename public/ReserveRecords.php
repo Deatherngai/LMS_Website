@@ -74,7 +74,7 @@ tr:nth-child(even) {
                                 $item = $library[$k]['LID'].'_books';
                                 $books =json_decode($_SESSION[$item],true);
                                 for($e=0;$e<$n;$e++){
-                                    if(date("Y-m-d",$records[$e]['ApplyDate']['seconds']) == date("Y-m-d",$records[$e]['FixedDate']['seconds'])){
+                                    if($records[$e]['Status'] == "Wait"){
                                         $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td></td></tr>';
                                     }else{
                                         $content .= '<tr><td>'.$records[$e]['RD'].'</td><td>'.$books[$e]['BookName_EN'].'</td><td>'.$library[$k]['Library'].'</td><td>'.date("Y-m-d",$records[$e]['ApplyDate']['seconds']).'</td><td>'.$records[$e]['Status'].'</td><td>'.date("Y-m-d",$records[$e]['FixedDate']['seconds']).'</td></tr>';
